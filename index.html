@@ -39,7 +39,8 @@
     <!-- javascript -->
     <script src="app.js"></script> 
     <script>
-      const mycode = menu.map(a => `<article class="menu-item"><img src="${a.img}" alt="menu item" class="photo" />
+      const mycode = menu.map(function(a) {
+        return `<article class="menu-item"><img src="${a.img}" alt="menu item" class="photo" />
           <div class="item-info">
             <header>
               <h4>${a.title}</h4>
@@ -50,7 +51,8 @@
             </p>
             <h5 class="category">${a.category}</h5>
           </div>
-          </article>`).join("");
+          </article>`
+      } ).join("");
           console.log(mycode);
           document.getElementById("menu").innerHTML =  mycode;
     </script>
